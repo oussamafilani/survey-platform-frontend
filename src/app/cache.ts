@@ -1,7 +1,7 @@
 import {InMemoryCache, makeVar} from '@apollo/client'
-import {Product, User} from 'generated/graphql.generated'
-const shopVar = makeVar<(Product & {count: number})[]>([])
-const userVar = makeVar<User>({} as User)
+// import {Product, User} from 'generated/graphql.generated'
+// const shopVar = makeVar<(Product & {count: number})[]>([])
+// const userVar = makeVar<User>({} as User)
 
 export const in_memory_cache = new InMemoryCache({
   typePolicies: {
@@ -12,8 +12,8 @@ export const in_memory_cache = new InMemoryCache({
 })
 
 const localVariables = {
-  shopVar,
-  userVar,
+  // shopVar,
+  // userVar,
 }
 
 const cache = {

@@ -1,9 +1,9 @@
 module.exports = {
   schema: [
     {
-      'https://babelmadina.hasura.app/v1/graphql': {
+      'http://localhost:8080/v1/graphql': {
         headers: {
-          'x-hasura-admin-secret': process.env.ADMIN_SECRET,
+          'x-hasura-admin-secret': process.env.REACT_APP_HASURA_SECRET,
         },
       },
     },

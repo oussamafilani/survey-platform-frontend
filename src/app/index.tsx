@@ -1,3 +1,4 @@
+//@ts-nocheck
 import toast, {Toaster} from 'react-hot-toast'
 import {BrowserRouter} from 'react-router-dom'
 import {
@@ -19,10 +20,8 @@ import {
 import {Auth0Provider, useAuth0} from '@auth0/auth0-react'
 import cache from './cache'
 import Loading from './../shared/components/loading'
-
 const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
   const {getAccessTokenSilently, isLoading, isAuthenticated} = useAuth0()
-
   if (isLoading) {
     return <Loading />
   } else {
@@ -30,24 +29,24 @@ const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
       uri: BACKEND_URL,
     })
 
-    const errorLink = onError(({graphQLErrors, networkError}) => {
-      if (graphQLErrors)
-        graphQLErrors.forEach(({message, locations, path, extensions}) => {
-          if (extensions.code === 'UNAUTHENTICATED') {
-            toast.error('You are not authorized to view this page')
-          } else {
-            toast.error(`${message}`)
-          }
-          console.log(
-            `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
-          )
-        })
+    // const errorLink = onError(({graphQLErrors, networkError}) => {
+    //   if (graphQLErrors)
+    //     graphQLErrors.forEach(({message, locations, path, extensions}) => {
+    //       if (extensions.code === 'UNAUTHENTICATED') {
+    //         toast.error('You are not authorized to view this page')
+    //       } else {
+    //         toast.error(`${message}`)
+    //       }
+    //       console.log(
+    //         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+    //       )
+    //     })
 
-      if (networkError) {
-        console.log(`[Network error]: ${networkError}`)
-        toast.error(`Network error ${networkError.message}`)
-      }
-    })
+    //   if (networkError) {
+    //     console.log(`[Network error]: ${networkError}`)
+    //     toast.error(`Network error ${networkError.message}`)
+    //   }
+    // })
 
     const authLink = setContext(async () => {
       if (isAuthenticated) {
@@ -63,7 +62,8 @@ const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
     })
 
     const apolloClient = new ApolloClient({
-      link: from([errorLink, authLink.concat(httpLink)]),
+      // link: from([errorLink, authLink.concat(httpLink)]),
+      link: authLink.concat(httpLink),
       cache: cache.cache,
       connectToDevTools: true,
     })
