@@ -13,7 +13,7 @@ module.exports = {
         teal: colors.teal,
         cyan: colors.cyan,
         rose: colors.rose,
-        primary: colors.orange,
+        primary: colors.green,
         secondary: colors.teal,
       },
     },

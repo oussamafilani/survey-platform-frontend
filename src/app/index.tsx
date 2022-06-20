@@ -1,6 +1,7 @@
 //@ts-nocheck
 import toast, {Toaster} from 'react-hot-toast'
 import {BrowserRouter} from 'react-router-dom'
+
 import {
   ApolloClient,
   createHttpLink,
@@ -9,8 +10,9 @@ import {
 } from '@apollo/client'
 import {setContext} from '@apollo/client/link/context'
 import {onError} from '@apollo/client/link/error'
+
 import React from 'react'
-import Main from './main'
+import AppRoutes from '../routes/AppRoutes'
 import {
   BACKEND_URL,
   AUTH0_DOMAIN,
@@ -22,6 +24,7 @@ import cache from './cache'
 import Loading from './../shared/components/loading'
 const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
   const {getAccessTokenSilently, isLoading, isAuthenticated} = useAuth0()
+
   if (isLoading) {
     return <Loading />
   } else {
@@ -72,6 +75,7 @@ const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
   }
 }
 function App() {
+
   return (
     <React.StrictMode>
       <Auth0Provider
@@ -84,7 +88,7 @@ function App() {
         <AuthorizedApolloProvider>
           <Toaster />
           <BrowserRouter>
-            <Main />
+           <AppRoutes/>
           </BrowserRouter>
         </AuthorizedApolloProvider>
       </Auth0Provider>

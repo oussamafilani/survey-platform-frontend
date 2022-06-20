@@ -28,7 +28,7 @@
       "@graphql/*": ["apollo/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/pages/guest/routes.tsx"],
   "exclude": [
     "node_modules",
     "**/*.d.ts",
