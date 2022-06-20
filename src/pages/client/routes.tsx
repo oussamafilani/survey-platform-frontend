@@ -3,7 +3,6 @@ import NotFound from '../guest/404'
 import Contact from '../guest/Contact'
 import Dashboard from './Dashboard'
 
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {

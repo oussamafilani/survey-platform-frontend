@@ -75,7 +75,6 @@ const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
   }
 }
 function App() {
-
   return (
     <React.StrictMode>
       <Auth0Provider
@@ -88,7 +87,7 @@ function App() {
         <AuthorizedApolloProvider>
           <Toaster />
           <BrowserRouter>
-           <AppRoutes/>
+            <AppRoutes />
           </BrowserRouter>
         </AuthorizedApolloProvider>
       </Auth0Provider>

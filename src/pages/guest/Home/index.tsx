@@ -1,4 +1,3 @@
-
 import {Fragment} from 'react'
 import {Popover, Transition} from '@headlessui/react'
 import {
@@ -17,8 +16,7 @@ import {
 } from '@heroicons/react/outline'
 import {ChevronDownIcon} from '@heroicons/react/solid'
 import {useAuth0} from '@auth0/auth0-react'
-import { Link,useNavigate } from "react-router-dom";
-
+import {Link, useNavigate} from 'react-router-dom'
 
 const features = [
   {
@@ -105,7 +103,6 @@ export default function Main() {
   const {loginWithRedirect, logout, isAuthenticated} = useAuth0()
   const navigate = useNavigate()
   return (
-    
     <div className="relative bg-gray-50">
       <Popover className="relative bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -203,7 +200,7 @@ export default function Main() {
               </Popover>
 
               <Link
-              to={'/about'}
+                to={'/about'}
                 className="text-base font-medium text-gray-500 hover:text-gray-900 cursor-pointer"
               >
                 About
@@ -272,7 +269,7 @@ export default function Main() {
                               <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">
                                 Recent Posts
                               </h3>
-                              <ul  className="mt-4 space-y-4">
+                              <ul className="mt-4 space-y-4">
                                 {recentPosts.map(item => (
                                   <li
                                     key={item.id}
@@ -289,9 +286,7 @@ export default function Main() {
                               </ul>
                             </div>
                             <div className="mt-5 text-sm">
-                              <div
-                                className="font-medium text-primary-600 hover:text-primary-500"
-                              >
+                              <div className="font-medium text-primary-600 hover:text-primary-500">
                                 {' '}
                                 View all posts{' '}
                                 <span aria-hidden="true">&rarr;</span>
@@ -313,8 +308,7 @@ export default function Main() {
                 >
                   Sign in
                 </button>
-              ) 
-              }
+              )}
               {!isAuthenticated ? (
                 <button className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
                   Sign up
@@ -383,15 +377,11 @@ export default function Main() {
               </div>
               <div className="py-6 px-5 space-y-6">
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                  <button
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
+                  <button className="text-base font-medium text-gray-900 hover:text-gray-700">
                     Pricing
                   </button>
 
-                  <button
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
+                  <button className="text-base font-medium text-gray-900 hover:text-gray-700">
                     Docs
                   </button>
                   {resources.map(item => (
@@ -405,16 +395,12 @@ export default function Main() {
                   ))}
                 </div>
                 <div>
-                  <button
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
-                  >
+                  <button className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
                     Sign up
                   </button>
                   <p className="mt-6 text-center text-base font-medium text-gray-500">
                     Existing customer?
-                    <button
-                      className="text-primary-600 hover:text-primary-500"
-                    >
+                    <button className="text-primary-600 hover:text-primary-500">
                       Sign in
                     </button>
                   </p>
@@ -441,16 +427,12 @@ export default function Main() {
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
-                <div
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10"
-                >
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10">
                   Get started
                 </div>
               </div>
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <div
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
-                >
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
                   Live demo
                 </div>
               </div>
