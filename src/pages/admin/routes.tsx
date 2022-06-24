@@ -12,7 +12,7 @@ export default [
   },
   {
     path: '/user',
-    component: <Users/>,
+    component: <Users />,
   },
   // {
   //   path: '/test',

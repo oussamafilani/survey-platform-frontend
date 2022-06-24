@@ -2,8 +2,7 @@
 import {Fragment} from 'react'
 import {Disclosure, Menu, Transition} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
-import {Outlet,Link} from 'react-router-dom'
-
+import {Outlet, Link} from 'react-router-dom'
 
 const user = {
   name: 'Tom Cook',
@@ -70,13 +69,21 @@ export default function Example() {
                         ))} */}
                         <Link
                           to={'/user'}
-                          className={'bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium'}
-                        >User</Link>
+                          className={
+                            'bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium'
+                          }
+                        >
+                          User
+                        </Link>
 
                         <Link
                           to={'/test'}
-                          className={'bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium'}
-                        >Test</Link>
+                          className={
+                            'bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium'
+                          }
+                        >
+                          Test
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -220,7 +227,7 @@ export default function Example() {
         </header>
         <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <Outlet />
+            <Outlet />
           </div>
         </main>
       </div>
