@@ -32,25 +32,6 @@ const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
       uri: BACKEND_URL,
     })
 
-    // const errorLink = onError(({graphQLErrors, networkError}) => {
-    //   if (graphQLErrors)
-    //     graphQLErrors.forEach(({message, locations, path, extensions}) => {
-    //       if (extensions.code === 'UNAUTHENTICATED') {
-    //         toast.error('You are not authorized to view this page')
-    //       } else {
-    //         toast.error(`${message}`)
-    //       }
-    //       console.log(
-    //         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
-    //       )
-    //     })
-
-    //   if (networkError) {
-    //     console.log(`[Network error]: ${networkError}`)
-    //     toast.error(`Network error ${networkError.message}`)
-    //   }
-    // })
-
     const authLink = setContext(async () => {
       if (isAuthenticated) {
         const token = await getAccessTokenSilently()
@@ -65,7 +46,6 @@ const AuthorizedApolloProvider = ({children}: {children: React.ReactNode}) => {
     })
 
     const apolloClient = new ApolloClient({
-      // link: from([errorLink, authLink.concat(httpLink)]),
       link: authLink.concat(httpLink),
       cache: cache.cache,
       connectToDevTools: true,

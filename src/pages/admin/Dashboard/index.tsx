@@ -2,6 +2,8 @@
 import {Fragment} from 'react'
 import {Disclosure, Menu, Transition} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
+import {Outlet,Link} from 'react-router-dom'
+
 
 const user = {
   name: 'Tom Cook',
@@ -51,7 +53,7 @@ export default function Example() {
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map(item => (
+                        {/* {navigation.map(item => (
                           <a
                             key={item.name}
                             href={item.href}
@@ -65,7 +67,16 @@ export default function Example() {
                           >
                             {item.name}
                           </a>
-                        ))}
+                        ))} */}
+                        <Link
+                          to={'/user'}
+                          className={'bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium'}
+                        >User</Link>
+
+                        <Link
+                          to={'/test'}
+                          className={'bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium'}
+                        >Test</Link>
                       </div>
                     </div>
                   </div>
@@ -209,11 +220,7 @@ export default function Example() {
         </header>
         <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
-            <div className="px-4 py-4 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-            </div>
-            {/* /End replace */}
+          <Outlet />
           </div>
         </main>
       </div>

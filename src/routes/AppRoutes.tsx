@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
-import guestRoutes from '../pages/guest/routes'
+import guestRoutes from '../pages/user/routes'
 import clientRoutes from '../pages/client/routes'
 import adminRoutes from '../pages/admin/routes'
 
@@ -23,7 +23,7 @@ const AppRoutes = () => {
 
   return (
     <>
-      <Routes>{ClientrouteComponents}</Routes>
+      <Routes>{AdminrouteComponents}</Routes>
     </>
   )
 }

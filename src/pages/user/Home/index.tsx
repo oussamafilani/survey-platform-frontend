@@ -100,7 +100,8 @@ function classNames(...classes: string[]) {
 }
 
 export default function Main() {
-  const {loginWithRedirect, logout, isAuthenticated} = useAuth0()
+  const {loginWithRedirect,logout, isAuthenticated} = useAuth0()
+
   const navigate = useNavigate()
   return (
     <div className="relative bg-gray-50">
@@ -310,7 +311,9 @@ export default function Main() {
                 </button>
               )}
               {!isAuthenticated ? (
-                <button className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
+                <button 
+                onClick={() => loginWithRedirect()}
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
                   Sign up
                 </button>
               ) : (

@@ -1,6 +1,6 @@
-import Home from '../guest/Home'
-import NotFound from '../guest/404'
-import Contact from '../guest/Contact'
+import Home from '../user/Home'
+import NotFound from '../user/404'
+import Contact from '../user/Contact'
 import Dashboard from './Dashboard'
 
 // eslint-disable-next-line import/no-anonymous-default-export
